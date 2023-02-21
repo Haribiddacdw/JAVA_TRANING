@@ -4,15 +4,16 @@ import java.util.Scanner;
 
 public class Program18 {
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter the number to converts into words");
-		int number = scan.nextInt();
-		String temp = Integer.toString(number);
-		int[] numberArray = new int[temp.length()];
+		try (Scanner scan = new Scanner(System.in)) {
+			System.out.println("Enter the number to converts into words");
+			int number = scan.nextInt();
+			String temp = Integer.toString(number);
+			int[] numberArray = new int[temp.length()];
 
-		for (int i = 0; i < temp.length(); i++) {
-			numberArray[i] = Character.getNumericValue(temp.charAt(i));
-			convertToWords(Character.getNumericValue(temp.charAt(i)));
+			for (int i = 0; i < temp.length(); i++) {
+				numberArray[i] = Character.getNumericValue(temp.charAt(i));
+				convertToWords(Character.getNumericValue(temp.charAt(i)));
+			}
 		}
 
 	}
