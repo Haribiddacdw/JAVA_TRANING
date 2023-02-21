@@ -9,7 +9,7 @@ public class Program2 {
 	static boolean f;
 	static short g;
 
-	public static void main(String[] agrs) {
+	public static void main(String[] args) {
 
 		System.out.println("Default Value of byte = " + a);
 		System.out.println("Default Value of int = " + b);
