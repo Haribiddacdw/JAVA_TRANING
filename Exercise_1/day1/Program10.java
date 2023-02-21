@@ -22,7 +22,7 @@ public class Program10 {
 		  }
 		  print(array);
 	  }
-	
+	  
 	public static void print(int array[][]){
 
 		  for(int i=0;i<array.length;i++)
