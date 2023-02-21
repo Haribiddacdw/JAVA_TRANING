@@ -1,8 +1,9 @@
 package day3;
 
+public interface Program6 {
+	void methodOne();
 
-public interface Program6  {
-    void methodOne();
-    void methodTwo();
-    void methodThree();
+	void methodTwo();
+
+	void methodThree();
 }

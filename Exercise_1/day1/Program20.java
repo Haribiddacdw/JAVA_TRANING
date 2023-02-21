@@ -1,36 +1,43 @@
 package day1;
 
+import java.util.Scanner;
+
 public class Program20 {
 	public static void main(String[] args) {
-  
-		  int row = 4;
-		  int column = 4;
-		  int[][] array = { {1,2,3,4},
-				            {5,6,7,8},
-				            {9,10,11,12},
-				            {13,14,15,16}
-				           };
-		  System.out.println("Two Dimensional Matrix :");
-	      largestnumberinRow(array,row,column);
-		  
 
-	  }
-	
-	  public static void largestnumberinRow(int[][] array,int row,int column) {
-		     int i = 0;
-	        int max = 0;
-	        while (i < row) {
-	        	
-	            for (int j = 0; j < array[i].length; j++) {
-	                if (array[i][j] > max) {
-	                    max = array[i][j];
-	                }
-	            }
-	            System.out.println("The Largest Element in row "+(i+1)+" is "+max);
-	            max =0;
-	            i++;
-	 
-	        } 
-		  
-	  }
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter number of rows ");
+		int row = scan.nextInt();
+		System.out.println("Enter number of column ");
+		int column = scan.nextInt();
+		System.out.println("Two Dimensional Matrix :");
+		int[][] array = new int[row][column];
+
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < column; j++) {
+				array[i][j] = scan.nextInt();
+			}
+		}
+		System.out.println("Two Dimensional Matrix :");
+		largestnumberinRow(array, row, column);
+
+	}
+
+	public static void largestnumberinRow(int[][] array, int row, int column) {
+		int i = 0;
+		int max = 0;
+		while (i < row) {
+
+			for (int j = 0; j < array[i].length; j++) {
+				if (array[i][j] > max) {
+					max = array[i][j];
+				}
+			}
+			System.out.println("The Largest Element in row " + (i + 1) + " is " + max);
+			max = 0;
+			i++;
+
+		}
+
+	}
 }

@@ -1,12 +1,13 @@
 package day3a;
+
 import day3.Program6;
 
-public class ExampleImplementation implements Program6{
+public class ExampleImplementation implements Program6 {
 
 	@Override
 	public void methodOne() {
 		System.out.println("Method One implementation");
-		
+
 	}
 
 	@Override
