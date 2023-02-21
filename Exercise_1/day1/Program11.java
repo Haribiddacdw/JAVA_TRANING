@@ -3,9 +3,9 @@ package day1;
 public class Program11 {
 	public static void main(String[] args) {
 
-		int n = 3;
+		int number = 3;
 		System.out.println("Pattern using Two Dimensional Matrix :");
-		print(n);
+		print(number);
 
 	}
 
