@@ -19,13 +19,17 @@ public class Program9 {
 			array[array.length - i - 1] = temp;
 
 		}
+
 		System.out.println("Reverse Order : ");
 		print(array);
+		System.out.println();
 	}
 
 	public static void print(int array[]) {
 		for (int i = 0; i < array.length; i++) {
+
 			System.out.print(array[i] + " ");
+
 		}
 	}
 }

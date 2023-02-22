@@ -21,8 +21,19 @@ public class Program14 {
 	 *             main(String[] args)
 	 */
 
-	void main() {
+	public void main() {
 
 	}
 
 }
+
+//without public modier
+//Main method not found in class Main, please define the main method as:
+// public static void main(String[] args)
+
+//without static  -> error: class, interface, or enum expected
+
+//without function parameters
+//Main method not found in class Main, please define the main method as:
+// public static void main(String[] args)
+//or a JavaFX application class must extend javafx.application.Application

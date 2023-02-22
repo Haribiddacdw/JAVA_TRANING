@@ -6,10 +6,10 @@ public class Program4 {
 	public static void main(String[] args) {
 		try (Scanner scan = new Scanner(System.in)) {
 			System.out.println("Enter the Number to Check Whether it is Prime or not");
-			int number = scan.nextInt();
+			int number = 27;
 			int flag = 0;
-			for (int i = 2; i <= number / 2; i++) {
-				if (number % 2 == 0) {
+			for (int i = 2; i <= Math.sqrt(number); i++) {
+				if (number % i == 0) {
 					flag = 1;
 					break;
 				}

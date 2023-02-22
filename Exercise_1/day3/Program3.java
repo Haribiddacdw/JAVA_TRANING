@@ -4,23 +4,23 @@ import java.util.Arrays;
 
 public class Program3 {
 	public static void main(String[] args) {
-		FixedStack fs = new FixedStack(5);
-//    	  fs.push(1);
-//    	  fs.push(2);
-//    	  fs.push(3);
-//    	  fs.push(4);
-//    	  fs.push(5);
-//    	  fs.pop();
-//    	  fs.pop();
-//    	  fs.pop();
-		DynamicStack ds = new DynamicStack(2);
-		ds.push(1);
-		ds.push(2);
-		ds.push(3);
-		ds.push(4);
-		ds.push(5);
-		ds.pop();
-		ds.pop();
+		FixedStack fixedStack = new FixedStack(5);
+//    	  fixedStack.push(1);
+//    	  fixedStack.push(2);
+//    	  fixedStack.push(3);
+//    	  fixedStack.push(4);
+//    	  fixedStack.push(5);
+//    	  fixedStack.pop();
+//    	  fixedStack.pop();
+//    	  fixedStack.pop();
+		DynamicStack dynamicStack = new DynamicStack(2);
+		dynamicStack .push(1);
+		dynamicStack .push(2);
+		dynamicStack .push(3);
+		dynamicStack .push(4);
+		dynamicStack .push(5);
+		dynamicStack .pop();
+		dynamicStack .pop();
 	}
 }
 

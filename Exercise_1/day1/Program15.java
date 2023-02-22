@@ -7,12 +7,13 @@ public class Program15 {
 		System.out.println();
 		Program15b object = new Program15b();
 		int number = 28;
+		
 		System.out.println();
 		System.out.println("check wether given number is Armstrong number , Palindrone, Perfect Number ");
 		System.out.println();
-		object.armstrongNumber(number);
-		object.palindromeNumber(number);
-		object.perfectNumber(number);
+		object.armstrongNumber(1634);
+		object.palindromeNumber(232);
+		object.perfectNumber(8128);
 	}
 
 	static void primeNumber() {
@@ -30,6 +31,7 @@ public class Program15 {
 		}
 	}
 }
+
 
 class Program15b {
 

@@ -12,8 +12,8 @@ public class Program13 {
 			int noofSubjects = scan.nextInt();
 			int[][] marks = new int[student][noofSubjects + 1];
 			for (int i = 0; i < student; i++) {
-				System.out.println("Enter student " + (i) + " marks");
-				for (int j = 0; j <= noofSubjects; j++) {
+				System.out.println("Enter student " + (i+1) + " marks");
+				for (int j = 0; j < noofSubjects; j++) {
 					marks[i][j] = scan.nextInt();
 				}
 			}
@@ -30,7 +30,7 @@ public class Program13 {
 		{
 			int sum = 0;
 
-			for (int j = 1; j <= no_sub; j++) {
+			for (int j = 0; j < no_sub; j++) {
 
 				sum = sum + array[i][j];
 

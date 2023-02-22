@@ -25,7 +25,6 @@ public class Program1 {
 class Value {
 
 	public void passByValue(int data) {
-		
 		data = 23;
 	}
 
