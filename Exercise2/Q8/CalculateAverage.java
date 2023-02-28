@@ -3,22 +3,22 @@ package Q8;
 import java.util.Scanner;
 
 public class CalculateAverage {
-      
-	public static void main(String[] args)throws Exception {
+    public static void main(String[] args) {
 
-            Scanner sc = new Scanner(System.in);
-            int totalMark=0;
-			for (int i = 1; i <=10; i++) {
-				System.out.println("Enter student" + i + " marks :");
-				try{
+        try (Scanner sc = new Scanner(System.in)) {
+            int totalMark = 0;
+            for (int student = 1; student <= 10; student++) {
+                System.out.println("Enter student" + student + " marks :");
+                try {
                     int marks = Integer.parseInt(sc.nextLine());
-                    totalMark = totalMark+marks;
-                }catch(NumberFormatException e){
+                    totalMark = totalMark + marks;
+                } catch (NumberFormatException e) {
                     System.out.println("Invalid input, Please enter once again");
-                    i--;
+                    student--;
                 }
-			}
-            double average = (double) totalMark/10;
-            System.out.println("The average mark of ten students = "+average);
-	}
+            }
+            double average = (double) totalMark / 10;
+            System.out.println("The average mark of ten students = " + average);
+        }
+    }
 }
