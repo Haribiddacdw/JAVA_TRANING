@@ -80,7 +80,7 @@ class DigitalClock {
 				System.out.println(hour + ":" + minutes + ":" + i);
 			}
 			seconds = i;
-			notify();
+			notifyAll();
 		} else {
 			try {
 				wait();
@@ -100,7 +100,7 @@ class DigitalClock {
 		if (minutes < 59 && seconds == 60) {
 			seconds = 0;
 			minutes++;
-			notify();
+			notifyAll();
 		} else {
 			try {
 				wait();
@@ -123,7 +123,7 @@ class DigitalClock {
 				hour = 0;
 			else
 				hour++;
-			notify();
+				notifyAll();
 		} else {
 			try {
 				wait();
