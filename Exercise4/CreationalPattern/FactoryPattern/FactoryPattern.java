@@ -23,7 +23,6 @@ import java.util.Scanner;
  * CricketBallFactory.
  */
 public class FactoryPattern {
-
     /**
      * Creates cricket balls based on the match type and prints out their types.
      * 

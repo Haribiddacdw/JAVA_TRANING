@@ -1,5 +1,7 @@
 package BehavioralPattern.CommandPattern;
-
+/*
+The Milk class encapsulates the logic for preparing milk.
+*/
 public class Milk {
 
     public void prepare() {

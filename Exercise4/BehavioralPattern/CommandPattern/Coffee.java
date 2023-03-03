@@ -1,5 +1,8 @@
 package BehavioralPattern.CommandPattern;
 
+/*
+The Coffee class encapsulates the logic for preparing coffee.
+*/
 public class Coffee {
     //ACTIONS
     public void prepare() {

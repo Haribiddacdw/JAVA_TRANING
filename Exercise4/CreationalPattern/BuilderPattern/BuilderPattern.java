@@ -18,7 +18,6 @@ public class BuilderPattern {
         System.out.println(myHouse);
     }
 }
-
 /**
  * The House class represents a house object with a specific configuration of
  * rooms.

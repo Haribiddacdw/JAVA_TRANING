@@ -49,7 +49,7 @@ interface Shape{
 //CONCRETE ELEMENT
 class Circle implements Shape {
     private final double radius;
-
+    //final keyword can be used in constructor arguments to indicate that once the constructor has initialized the corresponding instance variable, the value of the variable cannot be changed
     public Circle(final double radius) {
         this.radius = radius;
     }
@@ -71,6 +71,8 @@ class Circle implements Shape {
 class Square implements Shape {
     private final double length;
 
+        //final keyword can be used in constructor arguments to indicate that once the constructor has initialized the corresponding instance variable, the value of the variable cannot be changed
+
     public Square(final double length) {
         this.length = length;
     }
@@ -88,6 +90,8 @@ class Square implements Shape {
  class Rectangle implements Shape {
     private final double length;
     private final double width;
+    
+        //final keyword can be used in constructor arguments to indicate that once the constructor has initialized the corresponding instance variable, the value of the variable cannot be changed
 
     public Rectangle(final double length, final double width) {
         this.length = length;

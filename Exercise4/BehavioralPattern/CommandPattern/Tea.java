@@ -1,5 +1,9 @@
 package BehavioralPattern.CommandPattern;
 
+/*
+The Tea class encapsulates the logic for preparing tea.
+*/
+
 public class Tea {
 
     public void prepare() {

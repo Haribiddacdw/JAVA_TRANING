@@ -10,7 +10,7 @@ package CreationalPattern.SingletonPattern;
  */
 
 public class ClassBoard {
-    public static ClassBoard classBoard;
+    private static ClassBoard classBoard;
 
     /** Private constructor to prevent external instantiation of the class. */
 
@@ -19,13 +19,13 @@ public class ClassBoard {
     }
 
     /**
-     * Lazy Initialization
      * Returns the instance of ClassBoard . If an instance has not yet been created,
      * creates a new instance and returns it. Otherwise, returns the existing
-     * instance.
+     * instance
      */
 
     public static ClassBoard getInstance() {
+
         if (classBoard == null) {
 
             classBoard = new ClassBoard();
@@ -41,6 +41,10 @@ public class ClassBoard {
 
     
 }
+
+
+
+
 
 /*
 1) There should be only one instance allowed for a class and

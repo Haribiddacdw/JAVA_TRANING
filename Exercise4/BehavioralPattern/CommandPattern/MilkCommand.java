@@ -1,5 +1,8 @@
 package BehavioralPattern.CommandPattern;
 
+/**
+The MilkCommand class implements the Command interface and represents a command to prepare milk.
+*/
 class MilkCommand implements Command {
     private final Milk milk;
 
@@ -10,6 +13,9 @@ class MilkCommand implements Command {
     @Override
     public void execute() {
         milk.prepare(); 
-    //this execute () method invokes the appropriate action method of a Receiver class
+    /**
+      * this execute () method invokes the appropriate action method of a Receiver class 
+        Executes the command to prepare the Milk object.
+      */
     }
 }
