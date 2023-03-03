@@ -2,28 +2,24 @@ package BehavioralPattern.CommandPattern;
 /*@author Hari Prasath V
  *  @version 1.0
  */
- /** Import required packages
-  */
 
-   
+              //client
 public class VendingMachine {
     /**
-     *
      * @param args
-     * @return null
      */
     public static void main(String[] args) {
-        // Create beverage objects
-        Tea tea = new Tea();
+        // Create RECEIVER objects 
+        Tea tea = new Tea();   
         Coffee coffee = new Coffee();
-        Milk milk = new Milk();
+        Milk milk = new Milk(); 
     
         // Create command objects
         Command teaCommand = new TeaCommand(tea);
         Command coffeeCommand = new CoffeeCommand(coffee);
         Command milkCommand = new MilkCommand(milk);
     
-        // Create vending machine object
+        // Create vending machine object (INVOKER)
         VendingMachineCommand vendingMachine = new  VendingMachineCommand();
     
         // Add commands to vending machine
@@ -33,10 +29,26 @@ public class VendingMachine {
     
         // Simulate button presses
         vendingMachine.pressButton(0); // Serve tea
-        vendingMachine.pressButton(1); // Serve coffee
-        vendingMachine.pressButton(2); // Serve milk
+        // vendingMachine.pressButton(1); // Serve coffee
+        // vendingMachine.pressButton(2); // Serve milk
     }
 }
 
 
 
+
+
+
+
+
+/*
+Command is an interface with execute() method. 
+
+The Client creates an instance of a command implementation and associates it with a receiver.
+
+An Invoker instructs the command to perform an action.
+
+Command implementation’s instance creates a binding between the receiver and an action.
+
+Receiver is the object that knows the actual steps to perform the action. Any class may serve as a Receiver.
+ */

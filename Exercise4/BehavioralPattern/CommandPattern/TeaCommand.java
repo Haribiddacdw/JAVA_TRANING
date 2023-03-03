@@ -1,6 +1,6 @@
 package BehavioralPattern.CommandPattern;
 
-class TeaCommand extends Command {
+class TeaCommand implements Command {
     private final Tea tea;
 
     public TeaCommand(Tea tea) {

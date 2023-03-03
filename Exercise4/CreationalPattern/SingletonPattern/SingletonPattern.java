@@ -11,9 +11,11 @@ public class SingletonPattern {
      * @param args The command line arguments.
      */
     public static void main(String[] args) {
-        OneplusBuds rightBuds = OneplusBuds.getInstance();
-        OneplusBuds leftBuds = OneplusBuds.getInstance();
-        rightBuds.press();
-        leftBuds.press();
+        ClassBoard student1 = ClassBoard.getInstance();
+        ClassBoard student2 = ClassBoard.getInstance();
+        student1.visibility();
+        student2.visibility();
+        System.out.println("Student1 :"+student1);
+        System.out.println("Student2 :"+student2);
     }
 }

@@ -1,6 +1,7 @@
 package BehavioralPattern.CommandPattern;
 import java.util.ArrayList;
 import java.util.List;
+
 public  class VendingMachineCommand {
     private final List<Command> commands = new ArrayList<>();
 

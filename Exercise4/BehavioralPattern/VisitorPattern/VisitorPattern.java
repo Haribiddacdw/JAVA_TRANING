@@ -2,19 +2,19 @@ package BehavioralPattern.VisitorPattern;
 /*@author Hari Prasath V
  *  @version 1.0
  */
- /** Import required packages
-  */
+
 import java.util.ArrayList;
 import java.util.List;
 
 //the ShapeVisitor interface with visit() methods declared for all the shape classes Square, Circle, and Rectangle.
-
+//VISITOR
 interface ShapeVisitor {
     void visit(Circle circle);
     void visit(Square square);
     void visit(Rectangle rectangle);
 }
 
+//CONCRETE VISITOR 
 class AreaVisitor implements ShapeVisitor {
     private double area;
 
@@ -37,35 +37,16 @@ class AreaVisitor implements ShapeVisitor {
         return this.area;
     }
 }
- class PerimeterVisitor implements ShapeVisitor {
-    private double perimeter;
 
-    @Override
-    public void visit(final Circle circle) {
-        perimeter = 2 * Math.PI * circle.getRadius();
-    }
-
-    @Override
-    public void visit(final Square square) {
-        perimeter = 4 * square.getLength();
-    }
-
-    @Override
-    public void visit(final Rectangle rectangle) {
-        perimeter = 2 * (rectangle.getLength() + rectangle.getWidth());
-    }
-
-    public double get() {
-        return this.perimeter;
-    }
-}
 
 
 //Shape interface with a single method, accept().
+//to perform an operation on a group of similar kind of Objects
 interface Shape{
     void accept(ShapeVisitor visitor);
 }
 
+//CONCRETE ELEMENT
 class Circle implements Shape {
     private final double radius;
 
@@ -77,6 +58,7 @@ class Circle implements Shape {
         return radius;
     }
 
+// Accept operation that takes a visitor as an argument.
     @Override
     public void accept(ShapeVisitor visitor) {
         visitor.visit(this);
@@ -84,6 +66,8 @@ class Circle implements Shape {
 
 
 }
+
+//CONCRETE ELEMENT
 class Square implements Shape {
     private final double length;
 
@@ -94,12 +78,13 @@ class Square implements Shape {
     public double getLength() {
         return length;
     }
-
+// Accept operation that takes a visitor as an argument.
     @Override
     public void accept(final ShapeVisitor visitor) {
         visitor.visit(this);
     }
 }
+//CONCRETE ELEMENT
  class Rectangle implements Shape {
     private final double length;
     private final double width;
@@ -117,6 +102,7 @@ class Square implements Shape {
         return width;
     }
 
+// Accept operation that takes a visitor as an argument.
     @Override
     public void accept(final ShapeVisitor visitor) {
         visitor.visit(this);
@@ -127,9 +113,7 @@ class Square implements Shape {
 
 public class VisitorPattern{
     /**
-     *
      * @param args
-     * @return null
      */
     public static void main(String[] args) {
         final List<Shape> shapes = new ArrayList<>();
@@ -139,7 +123,7 @@ public class VisitorPattern{
         shapes.add(new Rectangle(10, 2));
        
         final AreaVisitor areaVisitor = new AreaVisitor();
-        final PerimeterVisitor perimeterVisitor = new PerimeterVisitor();
+ 
 
         for (Shape shape: shapes) {
             shape.accept(areaVisitor);
@@ -149,19 +133,6 @@ public class VisitorPattern{
                 "Area of %s: %.2f%n", 
                 shape.getClass().getSimpleName(), 
                 area
-            );
-        }
-
-        System.out.println("---------------------------------");
-
-        for (Shape shape: shapes) {
-            shape.accept(perimeterVisitor);
-            final double perimeter = perimeterVisitor.get();
-
-            System.out.printf(
-                "Perimeter of %s: %.2f%n",
-                shape.getClass().getSimpleName(),
-                perimeter
             );
         }
     }

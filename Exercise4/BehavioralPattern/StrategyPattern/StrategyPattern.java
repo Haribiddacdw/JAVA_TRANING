@@ -14,7 +14,6 @@ public class StrategyPattern {
         goodFood.food = new Biryani();
         goodFood.displayFoodNames();
     }
-
 }
 
 /**
@@ -46,7 +45,7 @@ class Biryani extends Food {
 
     @Override
     public void foodName() {
-        System.out.println("Biryani");
+        System.out.println("Biryani is ready");
     }
 }
 
@@ -57,7 +56,7 @@ class Biryani extends Food {
 class Dosa extends Food {
     @Override
     public void foodName() {
-        System.out.println("Dosaaaa !!!!");
+        System.out.println("Dosaaaa is ready!!!!");
     }
 }
 
@@ -68,6 +67,47 @@ class Dosa extends Food {
 class Chapati extends Food {
     @Override
     public void foodName() {
-        System.out.println("Chapati");
+        System.out.println("Chapati is ready");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+ * The Strategy Design Pattern is useful when there is a set of related algorithms and a client object needs to be able to dynamically pick and 
+   choose an algorithm from this set that suits its current need. 
+ * The Strategy pattern suggests keeping the implementation of each of the algorithms in a separate class.
+ *  Each such algorithm encapsulated in a separate class is referred to as a Strategy
+*/

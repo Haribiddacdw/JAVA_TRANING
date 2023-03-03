@@ -1,6 +1,6 @@
 package BehavioralPattern.CommandPattern;
 
-class CoffeeCommand extends Command {
+class CoffeeCommand implements Command {
     private final Coffee coffee;
 
     public CoffeeCommand(Coffee coffee) {

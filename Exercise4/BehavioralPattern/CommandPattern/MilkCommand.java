@@ -1,6 +1,6 @@
 package BehavioralPattern.CommandPattern;
 
-class MilkCommand extends Command {
+class MilkCommand implements Command {
     private final Milk milk;
 
     public MilkCommand(Milk milk) {
@@ -9,6 +9,7 @@ class MilkCommand extends Command {
 
     @Override
     public void execute() {
-        milk.prepare();
+        milk.prepare(); 
+    //this execute () method invokes the appropriate action method of a Receiver class
     }
 }

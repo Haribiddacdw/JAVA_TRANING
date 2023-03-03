@@ -11,6 +11,6 @@ public class RedCricketBall implements CricketBall {
      */
     @Override
     public void getBallType() {
-        System.out.println("This is a red cricket ball.");
+        System.out.println("Use red cricket ball.");
     }
 }

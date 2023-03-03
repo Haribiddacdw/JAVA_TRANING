@@ -1,5 +1,4 @@
 package CreationalPattern.FactoryPattern;
-
 /**
 * The CricketBallFactory class is a factory class that creates cricket balls
 * based on the ground type.
@@ -10,12 +9,11 @@ public  class CricketBallFactory {
     * 
     * @param groundType the type of the cricket ground
     * @return a cricket ball
-    * @throws IllegalArgumentException if the ground type is not "dry" or "wet"
     */
    public static CricketBall createCricketBall(String groundType) {
-       if (groundType.equalsIgnoreCase("dry")) {
+       if (groundType.equalsIgnoreCase("TEST")) {
            return new RedCricketBall();
-       } else if (groundType.equalsIgnoreCase("wet")) {
+       } else if (groundType.equalsIgnoreCase("ODI")) {
            return new WhiteCricketBall();
        } else {
            throw new IllegalArgumentException("Invalid ground type: " + groundType);

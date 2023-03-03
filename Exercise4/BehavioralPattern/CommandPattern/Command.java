@@ -1,6 +1,6 @@
 package BehavioralPattern.CommandPattern;
 
-abstract class Command {
-    void execute(){
-    }
+interface Command {
+    void execute();
+    
 }
