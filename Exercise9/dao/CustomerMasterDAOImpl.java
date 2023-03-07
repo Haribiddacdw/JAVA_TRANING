@@ -12,6 +12,33 @@ import dto.CustomerMasterDTO;
 
 
 public class CustomerMasterDAOImpl extends CustomerMasterDAO implements Cloneable{
+	
+	private static CustomerMasterDAOImpl customerMasterDao;
+	public static CustomerMasterDAOImpl  getUserDAOImplObject() {
+		if(customerMasterDao==null) {
+			customerMasterDao=new CustomerMasterDAOImpl();
+			return customerMasterDao;
+		}
+		else {
+			return customerMasterDao.createClone();
+		}
+	}
+	private CustomerMasterDAOImpl createClone() {
+		if(customerMasterDao!=null) {
+			try{
+				return (CustomerMasterDAOImpl)super.clone();
+			}catch(Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+		}
+		else {
+			return null;
+		}
+	}
+	private CustomerMasterDAOImpl() {
+		// TODO Auto-generated constructor stub
+	}
 	public CustomerMasterDTO findByCustomerId(int number) {
 		try {
 		Connection con=DBUtility.getConnection();
@@ -87,11 +114,10 @@ public class CustomerMasterDAOImpl extends CustomerMasterDAO implements Cloneabl
 			ps.setInt(1, customerid);
 			ResultSet rs=ps.executeQuery();
 			if(rs.next()) {
-				ps=con.prepareStatement("update customer_master set customerid=?,customername=?,customeraddress=? where customerid=?");
-				ps.setInt(1, customerdto.getCustomerId());
-				ps.setString(2, customerdto.getCustomerName());
-				ps.setString(3,customerdto.getCustomerAddress());
-				ps.setInt(4, customerdto.getCustomerId());
+				ps=con.prepareStatement("update customer_master set customername=?,customeraddress=? where customerid=?");
+				ps.setString(1, customerdto.getCustomerName());
+				ps.setString(2,customerdto.getCustomerAddress());
+				ps.setInt(3, customerdto.getCustomerId());
 				int n=ps.executeUpdate();
 				DBUtility.closeConnection(null);
 				return n;
@@ -112,9 +138,9 @@ public class CustomerMasterDAOImpl extends CustomerMasterDAO implements Cloneabl
 	public void deleteCustomer(CustomerMasterDTO customerdto) {
 		try {
 			Connection con=DBUtility.getConnection();
-			int invoiceno = customerdto.getCustomerId();
+			int customerId = customerdto.getCustomerId();
 			PreparedStatement ps=con.prepareStatement("DELETE FROM customer_master WHERE customerid = ?");
-			ps.setInt(1, invoiceno);
+			ps.setInt(1, customerId);
 			int n = ps.executeUpdate();
 			if (n == 0) {
 			    System.out.println("customer does not exist");

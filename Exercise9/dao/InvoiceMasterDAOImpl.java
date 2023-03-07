@@ -11,6 +11,33 @@ import database.DBUtility;
 import dto.InvoiceMasterDTO;
 
 public class InvoiceMasterDAOImpl extends InvoiceMasterDAO implements Cloneable{
+	
+	private static InvoiceMasterDAOImpl invoiceMasterDao;
+	public static InvoiceMasterDAOImpl  getUserDAOImplObject() {
+		if(invoiceMasterDao==null) {
+			invoiceMasterDao=new InvoiceMasterDAOImpl();
+			return invoiceMasterDao;
+		}
+		else {
+			return invoiceMasterDao.createClone();
+		}
+	}
+	private InvoiceMasterDAOImpl createClone() {
+		if(invoiceMasterDao!=null) {
+			try{
+				return (InvoiceMasterDAOImpl)super.clone();
+			}catch(Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+		}
+		else {
+			return null;
+		}
+	}
+	private InvoiceMasterDAOImpl() {
+		// TODO Auto-generated constructor stub
+	}
 	public InvoiceMasterDTO findByInvoiceNo(int number) {
 		try {
 		Connection con=DBUtility.getConnection();

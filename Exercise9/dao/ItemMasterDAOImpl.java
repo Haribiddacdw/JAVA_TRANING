@@ -10,6 +10,32 @@ import database.DBUtility;
 import dto.ItemMasterDTO;
 
 public class ItemMasterDAOImpl extends ItemMasterDAO implements Cloneable{
+	private static ItemMasterDAOImpl itemMasterDao;
+	public static ItemMasterDAOImpl getUserDAOImplObject() {
+		if(itemMasterDao==null) {
+			itemMasterDao=new ItemMasterDAOImpl();
+			return itemMasterDao;
+		}
+		else {
+			return itemMasterDao.createClone();
+		}
+	}
+	private ItemMasterDAOImpl createClone() {
+		if(itemMasterDao!=null) {
+			try{
+				return (ItemMasterDAOImpl)super.clone();
+			}catch(Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+		}
+		else {
+			return null;
+		}
+	}
+	private ItemMasterDAOImpl() {
+		// TODO Auto-generated constructor stub
+	}
 	public ItemMasterDTO findByItemNo(int number) {
 		try {
 		Connection con=DBUtility.getConnection();

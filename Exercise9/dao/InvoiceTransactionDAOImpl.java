@@ -12,6 +12,32 @@ import dto.InvoiceTransactionDTO;
 
 
 public class InvoiceTransactionDAOImpl extends InvoiceTransactionDAO implements Cloneable{
+	private static InvoiceTransactionDAOImpl invoiceTransactionDao;
+	public static InvoiceTransactionDAOImpl getUserDAOImplObject() {
+		if(invoiceTransactionDao==null) {
+			invoiceTransactionDao=new InvoiceTransactionDAOImpl();
+			return invoiceTransactionDao;
+		}
+		else {
+			return invoiceTransactionDao.createClone();
+		}
+	}
+	private InvoiceTransactionDAOImpl createClone() {
+		if(invoiceTransactionDao!=null) {
+			try{
+				return (InvoiceTransactionDAOImpl)super.clone();
+			}catch(Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+		}
+		else {
+			return null;
+		}
+	}
+	private InvoiceTransactionDAOImpl() {
+		// TODO Auto-generated constructor stub
+	}
 	public InvoiceTransactionDTO findByInvoiceNo(int number) {
 		try {
 		Connection con=DBUtility.getConnection();
