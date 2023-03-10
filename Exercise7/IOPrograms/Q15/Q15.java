@@ -8,9 +8,9 @@ public class Q15 {
 
         try (BufferedReader reader = new BufferedReader(new FileReader( "IOPrograms/Q15/sourcefile.txt"));
         BufferedWriter writer = new BufferedWriter(new FileWriter("IOPrograms/Q15/destinationfile.txt"))) {
-            String c;
-            while ((c = reader.readLine()) != null) {
-                writer.write(c);
+            String string;
+            while ((string = reader.readLine()) != null) {
+                writer.write(string);
                 writer.newLine();
             }
             System.out.println("File copied successfully.");

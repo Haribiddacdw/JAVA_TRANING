@@ -8,7 +8,7 @@ public class Q16 {
     public static void main(String[] args) {
    
         // Write Date object to file
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("IOPrograms/Q16/date.txt"))) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("IOPrograms/Q16/dateFile.txt"))) {
             Date date = new Date();
             outputStream.writeObject(date);
             System.out.println("Date object written to file.");
@@ -17,7 +17,7 @@ public class Q16 {
         }
 
         // Read Date object from file
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("IOPrograms/Q16/date.txt"))) {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("IOPrograms/Q16/dateFile.txt"))) {
             Date date = (Date) inputStream.readObject();
             System.out.println("Date object read from file: " + date);
         } catch (IOException | ClassNotFoundException e) {
