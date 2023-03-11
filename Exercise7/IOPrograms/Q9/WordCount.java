@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*@author Hari Prasath V
  *  @version 1.0
   */
-public class Q9 {
+public class WordCount {
     public static void main(String[] args) {
        
         Scanner scanner = new Scanner(System.in);

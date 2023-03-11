@@ -4,7 +4,7 @@ import java.io.File;
 /*@author Hari Prasath V
  *  @version 1.0
   */
-public class Q10 {
+public class FileOperation {
     public static void main(String[] args) {
 
         File file = new File("IOPrograms/Q10/demo.txt"); 

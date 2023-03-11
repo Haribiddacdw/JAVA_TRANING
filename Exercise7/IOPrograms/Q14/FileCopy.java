@@ -3,7 +3,7 @@ import java.io.*;
 /*@author Hari Prasath V
  *  @version 1.0
   */
-public class Q14 {
+public class FileCopy {
     public static void main(String[] args) {
 
         try (Reader reader = new FileReader( "IOPrograms/Q14/sourcefile.txt");
@@ -15,7 +15,7 @@ public class Q14 {
             }
             System.out.println("File copied successfully....");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
     }
 }

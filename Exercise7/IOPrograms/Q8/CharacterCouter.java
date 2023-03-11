@@ -3,7 +3,7 @@ import java.util.Scanner;
 /*@author Hari Prasath V
  *  @version 1.0
   */
-public class Q8{
+public class CharacterCouter{
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             int count = 0;
